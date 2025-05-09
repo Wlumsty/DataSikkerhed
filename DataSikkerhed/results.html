@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="da">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test resultater - DataSikkerhed</title>
+    <link rel="stylesheet" href="css/main.css">
+</head>
+<body class="results-page">
+    <div class="container">
+        <header>
+            <h1>DataSikkerhed</h1>
+            <h2>Testresultater</h2>
+        </header>
+
+        <main>
+            <div class="results-container">
+                <div class="results-header">
+                    <h2>Tak for at gennemføre datasikkerhedstesten!</h2>
+                    <p>Herunder kan du se en oversigt over dine valg og hvad du kan lære af dem.</p>
+                </div>
+                
+                <div class="final-score">
+                    <div class="score-value" id="scoreValue">?/3</div>
+                    <div class="score-label">Din sikkerhedsscore</div>
+                </div>
+
+                <section class="results-section">
+                    <h2>Dine valg</h2>
+                    <div class="choice-list" id="choicesList">
+                        <!-- Will be populated by JavaScript -->
+                    </div>
+                </section>
+                
+                <section class="results-section">
+                    <h2>Sikkerhedstips</h2>
+                    
+                    <div class="security-tip">
+                        <h3><span class="tip-icon">💡</span> Beskyt dine login-oplysninger</h3>
+                        <p>Brug aldrig de samme adgangskoder på flere sider. Opret stærke, unikke adgangskoder for hver tjeneste du bruger.</p>
+                        <div id="passwordAnalysisTips"></div>
+                        <p><strong>Anbefalinger til stærkere adgangskoder:</strong></p>
+                        <ul>
+                            <li>Brug <strong>minimum 12 tegn</strong> for at undgå brute force angreb</li>
+                            <li>Undgå <strong>forudsigelige mønstre</strong> som "123", "abc" eller "qwerty"</li>
+                            <li>Anvend <strong>forskellige specialtegn</strong> i hele adgangskoden, ikke kun "!" til sidst</li>
+                            <li>Brug en <strong>password manager</strong> som LastPass, 1Password eller Bitwarden til at generere og gemme unikke adgangskoder</li>
+                            <li>Aktivér <strong>to-faktor autentificering (2FA)</strong> hvor det er muligt for ekstra sikkerhed</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="security-tip">
+                        <h3><span class="tip-icon">💡</span> Vær skeptisk over for "for gode" tilbud</h3>
+                        <p>Hvis noget lyder for godt til at være sandt, er det det sandsynligvis også. Vær især opmærksom på tilbud om gratis produkter eller konkurrencer.</p>
+                    </div>
+                    
+                    <div class="security-tip">
+                        <h3><span class="tip-icon">💡</span> Check URL'en</h3>
+                        <p>Kig altid på webadressens stavemåde. Svindlere bruger ofte webadresser der ligner rigtige tjenester, men med små ændringer som faceb0ok.com i stedet for facebook.com.</p>
+                    </div>
+                    
+                    <div class="security-tip">
+                        <h3><span class="tip-icon">💡</span> Giv aldrig personlige oplysninger til usikre sider</h3>
+                        <p>Legitime virksomheder vil aldrig bede om følsomme oplysninger via e-mail eller pop-up-vinduer. Hvis du er i tvivl, kontakt virksomheden direkte via deres officielle kontaktoplysninger.</p>
+                    </div>
+                </section>
+                
+                <div class="action-buttons">
+                    <a href="#" id="resetBtn" class="btn btn-primary">Start forfra</a>
+                </div>
+            </div>
+        </main>
+
+        <footer>
+            <p>&copy; 2025 DataSikkerhed Projekt - Udviklet som del af MMD Semester 2 af Magnus Madsen</p>
+        </footer>
+    </div>
+
+    <script src="js/results.js"></script>
+</body>
+</html>

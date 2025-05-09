@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="da">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gmail - Log ind</title>
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body class="scenario-page gmail-page">
+    <div class="container">
+        <div class="scenario-header">
+            <div class="progress-bar">
+                <div class="progress" style="width: 25%"></div>
+            </div>
+            <div class="scenario-info">
+                <span class="small-text">Scenario 1/3: Gmail</span>
+            </div>
+        </div>
+
+        <div class="url-bar">
+            <span class="secure-indicator secure"><i class="fas fa-lock"></i></span>
+            <span class="protocol">https://</span>
+            <span class="domain">mail.google.com/login</span>
+            <div class="vpn-button" id="vpnToggle" title="Aktiver/deaktiver VPN">
+                <i class="fas fa-shield-alt"></i>
+                <span class="vpn-status">VPN</span>
+            </div>
+            <div class="browser-actions">
+                <div class="action-button minimize"></div>
+                <div class="action-button maximize"></div>
+                <div class="action-button close"></div>
+            </div>
+        </div>
+
+        <!-- Browser tabs -->
+        <div class="tabs-container">
+            <!-- Tabs will be dynamically added here by JavaScript -->
+        </div>
+
+        <main>
+            <section class="gmail-login">
+                <div class="gmail-card">
+                    <div class="logo-container">
+                        <img src="assets/images/gmail-logo.png" alt="Gmail Logo" class="gmail-logo">
+                    </div>
+                    <h1>Log ind</h1>
+                    <p>Brug din Google-konto</p>
+                    
+                    <form id="gmailLoginForm">
+                        <div class="form-group">
+                            <input type="email" id="gmailEmail" name="gmailEmail" placeholder="E-mail eller telefonnummer" required>
+                            <div class="form-error" id="gmailEmailError"></div>
+                        </div>
+                        <div class="form-group">
+                            <input type="password" id="gmailPassword" name="gmailPassword" placeholder="Adgangskode" required>
+                            <div class="form-error" id="gmailPasswordError"></div>
+                        </div>
+                        <div class="form-options">
+                            <div class="checkbox-group">
+                                <input type="checkbox" id="staySignedIn">
+                                <label for="staySignedIn">Forbliv logget ind</label>
+                            </div>
+                            <a href="#" class="forgot-link" id="forgotPasswordLink">Glemt adgangskode?</a>
+                        </div>
+                        <div class="form-actions">
+                            <a href="#" class="create-account">Opret konto</a>
+                            <button type="submit" class="btn btn-primary">Næste</button>
+                        </div>
+                    </form>
+                </div>
+            </section>
+        </main>
+
+        <!-- Forgot Password Modal -->
+        <div class="modal" id="forgotPasswordModal">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h3>Glemt adgangskode?</h3>
+                    <span class="close-modal">&times;</span>
+                </div>
+                <div class="modal-body">
+                    <p>Vi vil vise dine login-oplysninger, men i en virkelig situation ville dette betyde lavere sikkerhed. Dette vil reducere din sikkerhedsscore i testen.</p>
+                    <div id="loginCredentials" class="credentials-container">
+                        <p><strong>Email:</strong> <span id="savedEmail"></span></p>
+                        <p><strong>Adgangskode:</strong> <span id="savedPassword"></span></p>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button id="continueTestBtn" class="btn btn-primary">Fortsæt test</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/emails.js"></script>
+    <script src="js/scenarios.js"></script>
+    <script src="js/tabs.js"></script>
+</body>
+</html>

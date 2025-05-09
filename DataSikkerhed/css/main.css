@@ -1,0 +1,2226 @@
+@charset "UTF-8";
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Roboto", Arial, sans-serif;
+  line-height: 1.6;
+  color: #202124;
+  background-color: #f8f9fa;
+}
+
+.container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 15px;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  margin-bottom: 0.5em;
+  font-weight: 600;
+  line-height: 1.2;
+}
+
+h1 {
+  font-size: 2.5rem;
+  margin-top: 0.5em;
+}
+
+h2 {
+  font-size: 2rem;
+}
+
+h3 {
+  font-size: 1.5rem;
+}
+
+p {
+  margin-bottom: 1rem;
+}
+
+a {
+  color: #4285f4;
+  text-decoration: none;
+}
+a:hover {
+  text-decoration: underline;
+}
+
+.btn {
+  display: inline-block;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 1rem;
+  font-weight: 500;
+  text-align: center;
+  transition: all 0.3s ease;
+}
+.btn:hover {
+  opacity: 0.9;
+}
+.btn:focus {
+  outline: none;
+}
+
+.btn-primary {
+  background-color: #4285f4;
+  color: white;
+}
+
+.btn-outline {
+  background-color: transparent;
+  border: 1px solid #4285f4;
+  color: #4285f4;
+}
+
+.btn-filled {
+  background-color: #4285f4;
+  color: white;
+}
+
+.btn-claim {
+  background-color: #ea4335;
+  color: white;
+  font-size: 1.1rem;
+  font-weight: 600;
+  padding: 12px 24px;
+  width: 100%;
+}
+
+.btn-fb-login {
+  background-color: #1877f2;
+  color: white;
+  width: 100%;
+  padding: 12px;
+  font-weight: 600;
+}
+
+.btn-create-account {
+  background-color: #42b72a;
+  color: white;
+  padding: 12px 16px;
+}
+
+.card {
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  margin-bottom: 20px;
+}
+
+.form-group {
+  margin-bottom: 15px;
+}
+.form-group label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: 500;
+}
+.form-group input {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #dadce0;
+  border-radius: 4px;
+  font-size: 1rem;
+}
+.form-group input:focus {
+  outline: none;
+  border-color: #4285f4;
+}
+
+header {
+  text-align: center;
+  padding: 2rem 0;
+}
+
+main {
+  padding: 2rem 0;
+}
+
+footer {
+  text-align: center;
+  padding: 2rem 0;
+  color: #5f6368;
+  font-size: 0.9rem;
+}
+
+.intro {
+  max-width: 800px;
+  margin: 0 auto;
+  text-align: center;
+}
+.intro .important-note {
+  border: 2px solid #ea4335;
+  border-radius: 8px;
+  padding: 15px;
+  margin: 2rem 0;
+  background-color: rgba(234, 67, 53, 0.05);
+}
+.intro #startButton {
+  margin-top: 2rem;
+  padding: 12px 30px;
+  font-size: 1.1rem;
+}
+
+.login-section {
+  max-width: 500px;
+  margin: 0 auto;
+}
+.login-section .card {
+  padding: 30px;
+}
+.login-section h3 {
+  text-align: center;
+  margin-bottom: 1.5rem;
+}
+.login-section .info-text {
+  text-align: center;
+  color: #5f6368;
+  margin-bottom: 1rem;
+}
+.login-section .form-error {
+  color: #ea4335;
+  font-size: 0.9rem;
+  margin-top: 5px;
+  display: none;
+}
+.login-section .form-error.visible {
+  display: block;
+}
+.login-section .password-input-container {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+.login-section .password-input-container input {
+  width: 100%;
+  padding-right: 40px; /* Space for the eye icon */
+}
+.login-section .password-input-container .password-toggle {
+  position: absolute;
+  right: 10px;
+  cursor: pointer;
+  color: #5f6368;
+}
+.login-section .password-input-container .password-toggle:hover {
+  color: #4285f4;
+}
+.login-section .password-strength {
+  margin: 20px 0;
+  padding: 15px;
+  border: 1px solid #dadce0;
+  border-radius: 8px;
+  background-color: #f8f9fa;
+}
+.login-section .password-strength p {
+  margin-bottom: 10px;
+  font-weight: 500;
+}
+.login-section .password-strength ul {
+  list-style-type: none;
+  padding-left: 5px;
+}
+.login-section .password-strength li {
+  margin-bottom: 5px;
+  color: #5f6368;
+  position: relative;
+  padding-left: 20px;
+}
+.login-section .password-strength li:before {
+  content: "❌";
+  position: absolute;
+  left: 0;
+}
+.login-section .password-strength li.valid:before {
+  content: "✅";
+}
+
+.url-bar {
+  background-color: #f2f2f2;
+  border: 1px solid #dadce0;
+  border-radius: 4px 4px 0 0;
+  padding: 8px 12px;
+  display: flex;
+  align-items: center;
+  font-family: "Courier New", monospace;
+  font-size: 0.9rem;
+  margin-bottom: 0;
+  position: relative;
+}
+.url-bar .protocol {
+  color: #5f6368;
+  margin-right: 2px;
+}
+.url-bar .domain {
+  font-weight: 500;
+}
+.url-bar .secure-indicator {
+  margin-right: 5px;
+  font-size: 0.8rem;
+}
+.url-bar .secure-indicator.secure {
+  color: #34a853;
+}
+.url-bar .secure-indicator.not-secure {
+  color: #ea4335;
+}
+.url-bar .vpn-button {
+  display: flex;
+  align-items: center;
+  margin-left: auto;
+  margin-right: 80px;
+  font-size: 0.8rem;
+  padding: 3px 8px;
+  border-radius: 3px;
+  cursor: pointer;
+  color: #5f6368;
+  background-color: #f5f5f5;
+  border: 1px solid #ddd;
+  transition: all 0.2s ease;
+}
+.url-bar .vpn-button i {
+  margin-right: 5px;
+}
+.url-bar .vpn-button.active {
+  color: white;
+  background-color: #34a853;
+  border-color: #288140;
+}
+.url-bar .vpn-button:hover {
+  background-color: #e8e8e8;
+}
+.url-bar .vpn-button:hover.active {
+  background-color: #2e9549;
+}
+.url-bar .browser-actions {
+  position: absolute;
+  right: 10px;
+  display: flex;
+  gap: 15px;
+}
+.url-bar .browser-actions .action-button {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  cursor: pointer;
+}
+.url-bar .browser-actions .action-button.close {
+  background-color: #ff5f57;
+  position: relative;
+}
+.url-bar .browser-actions .action-button.close .reset-dropdown {
+  display: none;
+  position: absolute;
+  top: 100%;
+  right: -50px;
+  background-color: white;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+  border-radius: 4px;
+  width: 150px;
+  padding: 10px;
+  z-index: 1000;
+  font-family: Arial, sans-serif;
+  font-size: 12px;
+  color: #202124;
+}
+.url-bar .browser-actions .action-button.close .reset-dropdown p {
+  margin-bottom: 8px;
+}
+.url-bar .browser-actions .action-button.close .reset-dropdown .dropdown-buttons {
+  display: flex;
+  justify-content: space-between;
+}
+.url-bar .browser-actions .action-button.close .reset-dropdown .dropdown-buttons button {
+  padding: 4px 8px;
+  border: none;
+  border-radius: 3px;
+  cursor: pointer;
+  font-size: 12px;
+}
+.url-bar .browser-actions .action-button.close .reset-dropdown .dropdown-buttons button.btn-yes {
+  background-color: #ff5f57;
+  color: white;
+}
+.url-bar .browser-actions .action-button.close .reset-dropdown .dropdown-buttons button.btn-no {
+  background-color: #f2f2f2;
+  color: #202124;
+}
+.url-bar .browser-actions .action-button.close .reset-dropdown.show {
+  display: block;
+}
+.url-bar .browser-actions .action-button.close:hover .reset-dropdown {
+  display: block;
+}
+.url-bar .browser-actions .action-button.minimize {
+  background-color: #ffbd2e;
+}
+.url-bar .browser-actions .action-button.maximize {
+  background-color: #28c940;
+}
+
+.tabs-container {
+  display: flex;
+  background-color: #f0f3f5;
+  border: 1px solid #dadce0;
+  border-bottom: none;
+  border-radius: 8px 8px 0 0;
+}
+.tabs-container .browser-tab {
+  display: flex;
+  align-items: center;
+  padding: 8px 15px;
+  background-color: #e0e3e6;
+  border-right: 1px solid #d2d6db;
+  max-width: 200px;
+  position: relative;
+  cursor: pointer;
+}
+.tabs-container .browser-tab.active {
+  background-color: white;
+  border-bottom: 2px solid #4285f4;
+}
+.tabs-container .browser-tab .secure-icon {
+  color: #27ae60;
+  margin-right: 6px;
+  font-size: 0.8rem;
+}
+.tabs-container .browser-tab .not-secure-icon {
+  color: #e74c3c;
+  margin-right: 6px;
+  font-size: 0.8rem;
+}
+.tabs-container .browser-tab .tab-title {
+  max-width: 150px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.tabs-container .browser-tab .tab-favicon {
+  width: 16px;
+  height: 16px;
+  margin-right: 6px;
+}
+.tabs-container .browser-tab .tab-favicon img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: contain;
+     object-fit: contain;
+}
+.tabs-container .browser-tab:hover {
+  background-color: #d8dbdf;
+}
+.tabs-container .browser-tab:hover.active {
+  background-color: white;
+}
+
+.scenario-page .scenario-header {
+  background-color: white;
+  padding: 10px 0;
+  border-bottom: 1px solid #dadce0;
+}
+.scenario-page .scenario-header .progress-bar {
+  height: 6px;
+  background-color: #dadce0;
+  border-radius: 3px;
+  overflow: hidden;
+  margin-bottom: 10px;
+}
+.scenario-page .scenario-header .progress-bar .progress {
+  height: 100%;
+  background-color: #4285f4;
+}
+.scenario-page .scenario-header .scenario-info {
+  text-align: center;
+}
+.scenario-page .scenario-header .scenario-info .small-text {
+  font-size: 0.9rem;
+  color: #5f6368;
+}
+
+.gmail-page {
+  background-color: #f5f5f5;
+}
+.gmail-page .gmail-login {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 80vh;
+}
+.gmail-page .gmail-login .gmail-card {
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  padding: 48px 40px;
+  width: 100%;
+  max-width: 450px;
+  text-align: center;
+}
+.gmail-page .gmail-login .gmail-card .logo-container {
+  margin-bottom: 20px;
+}
+.gmail-page .gmail-login .gmail-card .logo-container .gmail-logo {
+  height: 24px;
+}
+.gmail-page .gmail-login .gmail-card h1 {
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+.gmail-page .gmail-login .gmail-card p {
+  color: #5f6368;
+  margin-bottom: 30px;
+}
+.gmail-page .gmail-login .gmail-card .form-options {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 15px 0 30px;
+}
+.gmail-page .gmail-login .gmail-card .form-options .checkbox-group {
+  display: flex;
+  align-items: center;
+}
+.gmail-page .gmail-login .gmail-card .form-options .checkbox-group input {
+  margin-right: 8px;
+  width: auto;
+}
+.gmail-page .gmail-login .gmail-card .form-actions {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.gmail-inbox-page {
+  background-color: #f5f5f5;
+}
+.gmail-inbox-page .gmail-interface {
+  display: flex;
+  height: calc(100vh - 130px);
+  border: 1px solid #dadce0;
+  border-radius: 0 0 8px 8px;
+  overflow: hidden;
+  max-width: 100%;
+  min-height: 500px;
+}
+.gmail-inbox-page .gmail-interface .gmail-sidebar {
+  width: 200px;
+  background-color: #f5f5f5;
+  border-right: 1px solid #dadce0;
+  padding: 15px 0;
+}
+.gmail-inbox-page .gmail-interface .gmail-sidebar .logo {
+  padding: 0 15px 15px;
+  margin-bottom: 15px;
+  border-bottom: 1px solid #dadce0;
+}
+.gmail-inbox-page .gmail-interface .gmail-sidebar .logo .gmail-logo {
+  height: 24px;
+}
+.gmail-inbox-page .gmail-interface .gmail-sidebar .sidebar-actions .sidebar-action {
+  padding: 8px 15px;
+  margin: 5px 0;
+  display: flex;
+  align-items: center;
+  border-radius: 0 20px 20px 0;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+.gmail-inbox-page .gmail-interface .gmail-sidebar .sidebar-actions .sidebar-action i {
+  margin-right: 15px;
+  font-size: 1.1rem;
+}
+.gmail-inbox-page .gmail-interface .gmail-sidebar .sidebar-actions .sidebar-action:hover {
+  background-color: #eff1f4;
+}
+.gmail-inbox-page .gmail-interface .gmail-sidebar .sidebar-actions .sidebar-action.active {
+  background-color: #e8f0fe;
+  color: #4285f4;
+  font-weight: 500;
+}
+@media (max-width: 768px) {
+  .gmail-inbox-page .gmail-interface .gmail-sidebar .sidebar-actions .sidebar-action {
+    padding: 8px 10px;
+    justify-content: center;
+  }
+  .gmail-inbox-page .gmail-interface .gmail-sidebar .sidebar-actions .sidebar-action span {
+    display: none;
+  }
+  .gmail-inbox-page .gmail-interface .gmail-sidebar .sidebar-actions .sidebar-action i {
+    margin-right: 0;
+  }
+}
+.gmail-inbox-page .gmail-interface .gmail-content {
+  flex-grow: 1;
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  width: calc(100% - 180px);
+  overflow-x: hidden;
+}
+@media (max-width: 768px) {
+  .gmail-inbox-page .gmail-interface .gmail-content {
+    width: calc(100% - 60px);
+  }
+}
+.gmail-inbox-page .gmail-interface .gmail-content .continue-to-next {
+  position: absolute;
+  bottom: 20px;
+  right: 20px;
+  background-color: #4285f4;
+  color: white;
+  border: none;
+  padding: 10px 15px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: 500;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  transition: all 0.2s ease;
+}
+.gmail-inbox-page .gmail-interface .gmail-content .continue-to-next:hover {
+  background-color: #1266f1;
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.3);
+}
+.gmail-inbox-page .gmail-interface .gmail-content .gmail-toolbar {
+  display: flex;
+  justify-content: space-between;
+  padding: 8px 15px;
+  border-bottom: 1px solid #dadce0;
+  background-color: #f5f5f5;
+}
+.gmail-inbox-page .gmail-interface .gmail-content .gmail-toolbar .toolbar-left {
+  display: flex;
+  align-items: center;
+}
+.gmail-inbox-page .gmail-interface .gmail-content .gmail-toolbar .toolbar-left .checkbox-container {
+  margin-right: 15px;
+}
+.gmail-inbox-page .gmail-interface .gmail-content .gmail-toolbar .toolbar-left .toolbar-actions {
+  display: flex;
+  gap: 10px;
+}
+.gmail-inbox-page .gmail-interface .gmail-content .gmail-toolbar .toolbar-left .toolbar-actions .toolbar-icon {
+  width: 24px;
+  height: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  color: #5f6368;
+}
+.gmail-inbox-page .gmail-interface .gmail-content .gmail-toolbar .toolbar-left .toolbar-actions .toolbar-icon:hover {
+  color: #202124;
+  background-color: rgba(0, 0, 0, 0.05);
+  border-radius: 50%;
+}
+.gmail-inbox-page .gmail-interface .gmail-content .gmail-toolbar .toolbar-right .pagination {
+  display: flex;
+  align-items: center;
+  color: #5f6368;
+  font-size: 0.9rem;
+}
+.gmail-inbox-page .gmail-interface .gmail-content .gmail-toolbar .toolbar-right .pagination .nav-arrows {
+  margin-left: 10px;
+  display: flex;
+  gap: 15px;
+}
+.gmail-inbox-page .gmail-interface .gmail-content .gmail-toolbar .toolbar-right .pagination .nav-arrows i {
+  cursor: pointer;
+}
+.gmail-inbox-page .gmail-interface .gmail-content .gmail-toolbar .toolbar-right .pagination .nav-arrows i:hover {
+  color: #202124;
+}
+.gmail-inbox-page .gmail-interface .gmail-content .email-list {
+  flex: 1;
+  overflow-y: auto;
+}
+.gmail-inbox-page .gmail-interface .gmail-content .email-list .email-item {
+  display: flex;
+  align-items: center;
+  padding: 8px 15px;
+  border-bottom: 1px solid #dadce0;
+  cursor: pointer;
+  font-size: 0.9rem;
+  position: relative;
+}
+.gmail-inbox-page .gmail-interface .gmail-content .email-list .email-item:hover {
+  box-shadow: inset 1px 0 0 #dadce0, inset -1px 0 0 #dadce0, 0 1px 2px 0 rgba(60, 64, 67, 0.3);
+  z-index: 1;
+}
+.gmail-inbox-page .gmail-interface .gmail-content .email-list .email-item.unread {
+  background-color: #f2f6fc;
+  font-weight: 500;
+}
+.gmail-inbox-page .gmail-interface .gmail-content .email-list .email-item .email-checkbox, .gmail-inbox-page .gmail-interface .gmail-content .email-list .email-item .email-star, .gmail-inbox-page .gmail-interface .gmail-content .email-list .email-item .email-delete {
+  margin-right: 10px;
+}
+.gmail-inbox-page .gmail-interface .gmail-content .email-list .email-item .email-checkbox, .gmail-inbox-page .gmail-interface .gmail-content .email-list .email-item .email-star {
+  color: #f4b400;
+}
+.gmail-inbox-page .gmail-interface .gmail-content .email-list .email-item .email-star {
+  color: #f5f5f5;
+  cursor: pointer;
+}
+.gmail-inbox-page .gmail-interface .gmail-content .email-list .email-item .email-star:hover {
+  color: #f8ca00;
+}
+.gmail-inbox-page .gmail-interface .gmail-content .email-list .email-item .email-star .fa-star {
+  font-size: 1.1rem;
+}
+.gmail-inbox-page .gmail-interface .gmail-content .email-list .email-item .email-delete {
+  color: #c4c4c4;
+  cursor: pointer;
+  opacity: 0.5;
+  transition: all 0.2s ease;
+}
+.gmail-inbox-page .gmail-interface .gmail-content .email-list .email-item .email-delete:hover {
+  color: #ea4335;
+  opacity: 1;
+}
+.gmail-inbox-page .gmail-interface .gmail-content .email-list .email-item .email-delete .fa-trash-alt {
+  font-size: 1rem;
+}
+.gmail-inbox-page .gmail-interface .gmail-content .email-list .email-item .email-sender {
+  width: 120px;
+  padding-right: 10px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.gmail-inbox-page .gmail-interface .gmail-content .email-list .email-item .email-content {
+  flex: 1;
+  display: flex;
+  min-width: 0;
+}
+.gmail-inbox-page .gmail-interface .gmail-content .email-list .email-item .email-content .email-subject {
+  margin-right: 10px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.gmail-inbox-page .gmail-interface .gmail-content .email-list .email-item .email-content .email-snippet {
+  color: #5f6368;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.gmail-inbox-page .gmail-interface .gmail-content .email-list .email-item .email-time {
+  margin-left: 10px;
+  white-space: nowrap;
+  font-size: 0.8rem;
+  color: #5f6368;
+}
+.gmail-inbox-page .email-detail-modal {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 1000;
+}
+.gmail-inbox-page .email-detail-modal.show {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.gmail-inbox-page .email-detail-modal .email-modal-content {
+  position: relative;
+  background-color: #ffffff;
+  border-radius: 8px;
+  width: 80%;
+  max-width: 600px;
+  margin: 10% auto;
+  padding: 0;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+  overflow: hidden;
+  max-height: 90vh;
+  display: flex;
+  flex-direction: column;
+}
+.gmail-inbox-page .email-detail-modal .email-modal-content .email-modal-header {
+  padding: 15px 20px;
+  border-bottom: 1px solid #dadce0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.gmail-inbox-page .email-detail-modal .email-modal-content .email-modal-header .email-modal-title {
+  margin: 0;
+}
+.gmail-inbox-page .email-detail-modal .email-modal-content .email-modal-header .email-modal-close {
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+.gmail-inbox-page .email-detail-modal .email-modal-content .email-modal-header .email-modal-close:hover {
+  color: #ea4335;
+}
+.gmail-inbox-page .email-detail-modal .email-modal-content .email-modal-body {
+  padding: 20px;
+  max-height: 60vh;
+  overflow-y: auto;
+  background-color: #f8f9fa;
+  font-family: Arial, sans-serif;
+  line-height: 1.5;
+}
+.gmail-inbox-page .email-detail-modal .email-modal-content .email-modal-body .email-content-container {
+  max-width: 100%;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+}
+.gmail-inbox-page .email-detail-modal .email-modal-content .email-modal-body .email-content-container img {
+  max-width: 100%;
+  height: auto;
+}
+.gmail-inbox-page .email-detail-modal .email-modal-content .email-modal-body .email-content-container p, .gmail-inbox-page .email-detail-modal .email-modal-content .email-modal-body .email-content-container li, .gmail-inbox-page .email-detail-modal .email-modal-content .email-modal-body .email-content-container div, .gmail-inbox-page .email-detail-modal .email-modal-content .email-modal-body .email-content-container span, .gmail-inbox-page .email-detail-modal .email-modal-content .email-modal-body .email-content-container a {
+  max-width: 100%;
+  word-break: break-word;
+}
+.gmail-inbox-page .email-detail-modal .email-modal-content .email-modal-body p {
+  margin-bottom: 15px;
+}
+.gmail-inbox-page .email-detail-modal .email-modal-content .email-modal-body.scam-email .email-banner {
+  margin-bottom: 20px;
+  text-align: center;
+}
+.gmail-inbox-page .email-detail-modal .email-modal-content .email-modal-body.scam-email .banner-img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 6px;
+}
+.gmail-inbox-page .email-detail-modal .email-modal-content .email-modal-body.scam-email .email-header-scam {
+  text-align: center;
+  margin-bottom: 20px;
+  color: #ff6b6b;
+}
+.gmail-inbox-page .email-detail-modal .email-modal-content .email-modal-body.scam-email .action-button {
+  text-align: center;
+  margin: 25px 0;
+}
+.gmail-inbox-page .email-detail-modal .email-modal-content .email-modal-body.scam-email .action-button .scam-button {
+  display: inline-block;
+  padding: 12px 25px;
+  background-color: #ff6b6b;
+  color: white;
+  font-weight: 600;
+  border-radius: 4px;
+  text-decoration: none;
+}
+.gmail-inbox-page .email-detail-modal .email-modal-content .email-modal-body.scam-email .action-button .scam-button .action-button {
+  text-align: center;
+  margin: 25px 0;
+}
+.gmail-inbox-page .email-detail-modal .email-modal-content .email-modal-body.scam-email .action-button .scam-button .action-button .scam-button {
+  display: inline-block;
+  padding: 12px 25px;
+  background-color: #ff6b6b;
+  color: white;
+  font-weight: 600;
+  border-radius: 4px;
+  text-decoration: none;
+}
+.gmail-inbox-page .email-detail-modal .email-modal-content .email-modal-body.scam-email .action-button .scam-button .action-button .scam-button:hover {
+  background-color: #ff3838;
+}
+.gmail-inbox-page .email-detail-modal .email-modal-content .email-modal-body.scam-email .action-button .scam-button .action-button .facebook-button {
+  display: inline-block;
+  padding: 12px 25px;
+  background-color: #1877f2;
+  color: white;
+  font-weight: 600;
+  border-radius: 4px;
+  text-decoration: none;
+}
+.gmail-inbox-page .email-detail-modal .email-modal-content .email-modal-body.scam-email .action-button .scam-button .action-button .facebook-button:hover {
+  background-color: #0b5fcc;
+}
+.gmail-inbox-page .email-detail-modal .email-modal-content .email-modal-body.scam-email .action-button .scam-button .small-notice, .gmail-inbox-page .email-detail-modal .email-modal-content .email-modal-body.scam-email .action-button .scam-button .small-warning {
+  font-size: 0.8rem;
+  color: #5f6368;
+  margin: 15px 0;
+}
+.gmail-inbox-page .email-detail-modal .email-modal-content .email-modal-body.scam-email .action-button .scam-button .small-warning {
+  color: #ea4335;
+}
+.gmail-inbox-page .email-detail-modal .email-modal-content .email-modal-body.scam-email .action-button .scam-button .email-footer-scam, .gmail-inbox-page .email-detail-modal .email-modal-content .email-modal-body.scam-email .action-button .scam-button .email-footer-facebook {
+  margin-top: 30px;
+  padding-top: 15px;
+  border-top: 1px solid #dadce0;
+  font-size: 0.8rem;
+  color: #5f6368;
+  text-align: center;
+}
+.gmail-inbox-page .email-detail-modal .email-modal-content .email-modal-body.scam-email .action-button .scam-button .email-footer-scam .footer-links, .gmail-inbox-page .email-detail-modal .email-modal-content .email-modal-body.scam-email .action-button .scam-button .email-footer-facebook .footer-links {
+  margin-top: 5px;
+}
+.gmail-inbox-page .email-detail-modal .email-modal-content .email-modal-body.scam-email .action-button .scam-button .email-footer-scam .footer-links a, .gmail-inbox-page .email-detail-modal .email-modal-content .email-modal-body.scam-email .action-button .scam-button .email-footer-facebook .footer-links a {
+  color: #5f6368;
+  margin: 0 5px;
+}
+.gmail-inbox-page .email-detail-modal .email-modal-content .email-modal-body.scam-email .action-button .scam-button .security-alert {
+  background-color: #fff4f4;
+  border-left: 4px solid #ea4335;
+  padding: 10px 15px;
+  margin-bottom: 20px;
+}
+.gmail-inbox-page .email-detail-modal .email-modal-content .email-modal-body.scam-email .action-button .scam-button .security-alert h3 {
+  color: #ea4335;
+  margin-bottom: 0;
+}
+.gmail-inbox-page .email-detail-modal .email-modal-content .email-modal-body.scam-email .action-button .scam-button .action-steps {
+  background-color: #f8f9fa;
+  padding: 15px;
+  border-radius: 4px;
+  margin: 15px 0;
+}
+.gmail-inbox-page .email-detail-modal .email-modal-content .email-modal-body.scam-email .action-button .scam-button .email-header-facebook {
+  text-align: center;
+  margin-bottom: 20px;
+}
+.gmail-inbox-page .email-detail-modal .email-modal-content .email-modal-body.scam-email .action-button .scam-button .email-header-facebook .facebook-header-logo {
+  height: 40px;
+}
+.gmail-inbox-page .email-detail-modal .email-modal-content .email-modal-body .email-modal-footer {
+  padding: 15px 20px;
+  border-top: 1px solid #dadce0;
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+}
+
+.dba-page {
+  background-color: #f8f8f8;
+}
+.dba-page .dba-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px;
+  background-color: white;
+  border-bottom: 1px solid #dadce0;
+  margin-bottom: 20px;
+}
+.dba-page .dba-header .logo {
+  flex: 0 0 120px;
+}
+.dba-page .dba-header .logo .dba-logo {
+  max-width: 100%;
+}
+.dba-page .dba-header .search-bar {
+  flex: 1;
+  margin: 0 20px;
+  display: flex;
+}
+.dba-page .dba-header .search-bar input {
+  flex: 1;
+  padding: 10px;
+  border: 1px solid #dadce0;
+  border-radius: 4px 0 0 4px;
+}
+.dba-page .dba-header .search-bar .search-btn {
+  padding: 10px 15px;
+  background-color: #4285f4;
+  color: white;
+  border: none;
+  border-radius: 0 4px 4px 0;
+  cursor: pointer;
+}
+.dba-page .dba-header .user-actions {
+  display: flex;
+  gap: 15px;
+  align-items: center;
+}
+.dba-page .dba-header .user-actions .btn-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+  color: #666;
+  transition: color 0.2s ease;
+}
+.dba-page .dba-header .user-actions .btn-icon:hover {
+  color: #4285f4;
+}
+.dba-page .dba-header .user-actions .btn-icon.btn-profile {
+  font-size: 1.8rem;
+}
+.dba-page .dba-header .user-actions .btn-icon.btn-create {
+  color: #4285f4;
+  font-size: 1.8rem;
+}
+.dba-page .dba-header .user-actions .btn-icon.btn-create:hover {
+  color: #1266f1;
+}
+.dba-page .dba-content .content-wrapper {
+  display: flex;
+}
+.dba-page .dba-content .content-wrapper .product-listings {
+  flex: 3;
+  padding: 0 15px;
+}
+.dba-page .dba-content .content-wrapper .product-listings h2 {
+  margin-bottom: 20px;
+}
+.dba-page .dba-content .content-wrapper .product-listings .listing-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 20px;
+}
+.dba-page .dba-content .content-wrapper .product-listings .listing-grid .product-card {
+  background-color: white;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+.dba-page .dba-content .content-wrapper .product-listings .listing-grid .product-card .product-img {
+  width: 100%;
+  height: 160px;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+.dba-page .dba-content .content-wrapper .product-listings .listing-grid .product-card .product-info {
+  padding: 15px;
+}
+.dba-page .dba-content .content-wrapper .product-listings .listing-grid .product-card .product-info h3 {
+  font-size: 16px;
+  margin-bottom: 8px;
+}
+.dba-page .dba-content .content-wrapper .product-listings .listing-grid .product-card .product-info .price {
+  font-weight: 600;
+  color: #202124;
+}
+.dba-page .dba-content .content-wrapper .sidebar {
+  flex: 1;
+  padding: 0 15px;
+}
+.dba-page .dba-content .content-wrapper .sidebar .ad-container {
+  position: sticky;
+  top: 20px;
+}
+.dba-page .dba-content .content-wrapper .sidebar .ad-container .scam-ad {
+  background: linear-gradient(135deg, #ff6b6b, #ff8e53);
+  color: white;
+  border-radius: 8px;
+  padding: 20px;
+  text-align: center;
+  box-shadow: 0 4px 15px rgba(255, 107, 107, 0.3);
+}
+.dba-page .dba-content .content-wrapper .sidebar .ad-container .scam-ad h3 {
+  font-size: 28px;
+  margin-bottom: 5px;
+}
+.dba-page .dba-content .content-wrapper .sidebar .ad-container .scam-ad h4 {
+  font-size: 20px;
+  margin-bottom: 15px;
+}
+.dba-page .dba-content .content-wrapper .sidebar .ad-container .scam-ad .prize-img {
+  max-width: 150px;
+  margin: 10px 0;
+}
+.dba-page .dba-content .content-wrapper .sidebar .ad-container .scam-ad p {
+  margin: 15px 0;
+}
+.dba-page .dba-content .content-wrapper .sidebar .ad-container .scam-ad .claim-btn {
+  background-color: #ffeb3b;
+  color: #333;
+  font-weight: 600;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 30px;
+  cursor: pointer;
+  width: 100%;
+  margin: 10px 0;
+  transition: transform 0.2s;
+}
+.dba-page .dba-content .content-wrapper .sidebar .ad-container .scam-ad .claim-btn:hover {
+  transform: scale(1.03);
+}
+.dba-page .dba-content .content-wrapper .sidebar .ad-container .scam-ad .ad-footer {
+  margin-top: 15px;
+  font-size: 12px;
+}
+.dba-page .dba-content .content-wrapper .sidebar .ad-container .scam-ad .ad-footer .ad-report {
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+.prize-claim-page {
+  background-color: #fff9e6;
+}
+.prize-claim-page .prize-claim {
+  display: flex;
+  justify-content: center;
+  padding: 20px 0;
+}
+.prize-claim-page .prize-claim .prize-card {
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  padding: 30px;
+  width: 100%;
+  max-width: 600px;
+}
+.prize-claim-page .prize-claim .prize-card .prize-header {
+  text-align: center;
+  margin-bottom: 20px;
+  position: relative;
+}
+.prize-claim-page .prize-claim .prize-card .prize-header h1 {
+  color: #ff6b6b;
+  margin-bottom: 10px;
+}
+.prize-claim-page .prize-claim .prize-card .prize-header .confetti-icon {
+  font-size: 30px;
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+.prize-claim-page .prize-claim .prize-card .prize-details {
+  text-align: center;
+  margin-bottom: 30px;
+}
+.prize-claim-page .prize-claim .prize-card .prize-details .prize-img-large {
+  max-width: 200px;
+  margin-bottom: 15px;
+}
+.prize-claim-page .prize-claim .prize-card .prize-details h2 {
+  color: #202124;
+  margin-bottom: 5px;
+}
+.prize-claim-page .prize-claim .prize-card .prize-details .prize-value {
+  font-weight: 600;
+  color: #ff6b6b;
+  margin-bottom: 15px;
+}
+.prize-claim-page .prize-claim .prize-card .claim-form-container h3 {
+  margin-bottom: 15px;
+}
+.prize-claim-page .prize-claim .prize-card .claim-form-container .timeLimit {
+  background-color: #ffe0e0;
+  padding: 10px;
+  border-radius: 4px;
+  text-align: center;
+  margin-bottom: 20px;
+}
+.prize-claim-page .prize-claim .prize-card .claim-form-container .timeLimit #countdown {
+  font-weight: 600;
+  color: #ea4335;
+}
+.prize-claim-page .prize-claim .prize-card .claim-form-container .consent-checkbox {
+  display: flex;
+  align-items: center;
+  margin: 20px 0;
+}
+.prize-claim-page .prize-claim .prize-card .claim-form-container .consent-checkbox input {
+  margin-right: 10px;
+  width: auto;
+}
+
+.google-page {
+  background-color: white;
+}
+.google-page .google-header {
+  text-align: center;
+  padding: 30px 0;
+}
+.google-page .google-header .google-logo {
+  margin-bottom: 20px;
+}
+.google-page .google-header .google-logo img {
+  height: 30px;
+}
+.google-page .google-header .search-container {
+  max-width: 600px;
+  margin: 0 auto;
+}
+.google-page .google-header .search-container .search-input {
+  width: 100%;
+  padding: 12px 20px;
+  border: 1px solid #dadce0;
+  border-radius: 24px;
+  font-size: 16px;
+  margin-bottom: 15px;
+}
+.google-page .google-header .search-container .search-input:focus {
+  outline: none;
+  box-shadow: 0 1px 6px rgba(32, 33, 36, 0.28);
+  border-color: rgba(223, 225, 229, 0);
+}
+.google-page .google-header .search-container .search-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+}
+.google-page .google-header .search-container .search-buttons button {
+  padding: 10px 16px;
+  background-color: #f8f9fa;
+  border: 1px solid #f8f9fa;
+  border-radius: 4px;
+  color: #202124;
+  font-size: 14px;
+  cursor: pointer;
+}
+.google-page .google-header .search-container .search-buttons button:hover {
+  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.1);
+  border-color: #dadce0;
+}
+.google-page .google-results {
+  max-width: 650px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+.google-page .google-results .search-stats {
+  color: #5f6368;
+  font-size: 14px;
+  margin-bottom: 20px;
+}
+.google-page .google-results .results-list .result-item {
+  margin-bottom: 30px;
+}
+.google-page .google-results .results-list .result-item.sponsored {
+  position: relative;
+  padding-top: 18px;
+}
+.google-page .google-results .results-list .result-item.sponsored .ad-label {
+  position: absolute;
+  top: 0;
+  left: 0;
+  font-size: 12px;
+  color: #5f6368;
+}
+.google-page .google-results .results-list .result-item .result-title {
+  margin-bottom: 5px;
+}
+.google-page .google-results .results-list .result-item .result-title a {
+  color: #1a0dab;
+  font-size: 18px;
+  text-decoration: none;
+}
+.google-page .google-results .results-list .result-item .result-title a:hover {
+  text-decoration: underline;
+}
+.google-page .google-results .results-list .result-item .result-url {
+  color: #006621;
+  font-size: 14px;
+  margin-bottom: 5px;
+}
+.google-page .google-results .results-list .result-item .result-description {
+  color: #5f6368;
+  font-size: 14px;
+  line-height: 1.5;
+}
+.google-page .instructions-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+.google-page .instructions-overlay .instructions-card {
+  background-color: white;
+  padding: 30px;
+  border-radius: 8px;
+  max-width: 450px;
+  text-align: center;
+}
+.google-page .instructions-overlay .instructions-card h2 {
+  margin-bottom: 15px;
+}
+.google-page .instructions-overlay .instructions-card p {
+  margin-bottom: 25px;
+}
+
+.facebook-page {
+  background-color: #f0f2f5;
+}
+.facebook-page .facebook-login {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 80vh;
+}
+.facebook-page .facebook-login .facebook-container {
+  width: 100%;
+  max-width: 400px;
+}
+.facebook-page .facebook-login .facebook-container .facebook-logo {
+  text-align: center;
+  margin-bottom: 20px;
+}
+.facebook-page .facebook-login .facebook-container .facebook-logo img {
+  height: 70px;
+}
+.facebook-page .facebook-login .facebook-container .login-card {
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  margin-bottom: 20px;
+}
+.facebook-page .facebook-login .facebook-container .login-card h2 {
+  text-align: center;
+  margin-bottom: 20px;
+  font-size: 18px;
+  font-weight: 500;
+}
+.facebook-page .facebook-login .facebook-container .login-card .forgotten-password {
+  text-align: center;
+  margin: 15px 0;
+}
+.facebook-page .facebook-login .facebook-container .login-card .forgotten-password a {
+  color: #1877f2;
+}
+.facebook-page .facebook-login .facebook-container .login-card .divider {
+  display: flex;
+  align-items: center;
+  margin: 20px 0;
+}
+.facebook-page .facebook-login .facebook-container .login-card .divider:before, .facebook-page .facebook-login .facebook-container .login-card .divider:after {
+  content: "";
+  flex: 1;
+  border-bottom: 1px solid #dadce0;
+}
+.facebook-page .facebook-login .facebook-container .login-card .divider span {
+  padding: 0 10px;
+  color: #5f6368;
+}
+.facebook-page .facebook-login .facebook-container .login-card .create-new {
+  text-align: center;
+}
+.facebook-page .facebook-login .facebook-container .facebook-footer, .facebook-page .facebook-login .facebook-container .site-info {
+  text-align: center;
+  color: #5f6368;
+  font-size: 14px;
+}
+.facebook-page .facebook-login .facebook-container .facebook-footer .subtle-different, .facebook-page .facebook-login .facebook-container .site-info .subtle-different {
+  color: #ea4335;
+  font-style: italic;
+}
+.facebook-page .facebook-login .facebook-container .facebook-footer .security-indicators, .facebook-page .facebook-login .facebook-container .site-info .security-indicators {
+  background-color: #f9f9f9;
+  padding: 8px;
+  border-radius: 4px;
+  border: 1px solid #dadce0;
+  display: inline-block;
+}
+.facebook-page .facebook-login .facebook-container .facebook-footer .security-indicators .secure-connection, .facebook-page .facebook-login .facebook-container .site-info .security-indicators .secure-connection {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.facebook-page .facebook-login .facebook-container .facebook-footer .security-indicators .secure-connection .lock-icon, .facebook-page .facebook-login .facebook-container .site-info .security-indicators .secure-connection .lock-icon {
+  margin-right: 5px;
+}
+.facebook-page.fake-facebook {
+  background-color: #f6f6f6;
+}
+
+.results-page .results-container {
+  max-width: 800px;
+  margin: 0 auto;
+}
+.results-page .results-container .results-header {
+  text-align: center;
+  margin-bottom: 30px;
+}
+.results-page .results-container .results-section {
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  padding: 30px;
+  margin-bottom: 30px;
+}
+.results-page .results-container .results-section h2 {
+  color: #4285f4;
+  margin-bottom: 20px;
+  border-bottom: 1px solid #dadce0;
+  padding-bottom: 10px;
+}
+.results-page .results-container .results-section .choice-list {
+  margin-bottom: 20px;
+}
+.results-page .results-container .results-section .choice-list .choice-item {
+  display: flex;
+  margin-bottom: 15px;
+  border-left: 3px solid #4285f4;
+  padding: 10px 15px;
+  background-color: rgba(66, 133, 244, 0.05);
+}
+.results-page .results-container .results-section .choice-list .choice-item.incorrect {
+  border-left-color: #ea4335;
+  background-color: rgba(234, 67, 53, 0.05);
+}
+.results-page .results-container .results-section .choice-list .choice-item.correct {
+  border-left-color: #34a853;
+  background-color: rgba(52, 168, 83, 0.05);
+}
+.results-page .results-container .results-section .choice-list .choice-item .choice-icon {
+  margin-right: 15px;
+  font-size: 20px;
+}
+.results-page .results-container .results-section .choice-list .choice-item .choice-content {
+  flex: 1;
+}
+.results-page .results-container .results-section .choice-list .choice-item .choice-content .choice-title {
+  font-weight: 600;
+  margin-bottom: 5px;
+}
+.results-page .results-container .results-section .choice-list .choice-item .choice-content .choice-explanation {
+  color: #5f6368;
+  font-size: 14px;
+}
+.results-page .results-container .results-section .security-tip {
+  background-color: #e8f5e9;
+  padding: 15px;
+  border-radius: 8px;
+  margin-top: 20px;
+}
+.results-page .results-container .results-section .security-tip h3 {
+  color: #34a853;
+  display: flex;
+  align-items: center;
+}
+.results-page .results-container .results-section .security-tip h3 .tip-icon {
+  margin-right: 10px;
+}
+.results-page .results-container .final-score {
+  text-align: center;
+  margin: 30px 0;
+}
+.results-page .results-container .final-score .score-value {
+  font-size: 36px;
+  font-weight: 700;
+  color: #4285f4;
+}
+.results-page .results-container .final-score .score-label {
+  color: #5f6368;
+}
+.results-page .results-container .action-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  margin-top: 30px;
+}
+
+.modal {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 1000;
+  align-items: center;
+  justify-content: center;
+}
+.modal.show {
+  display: flex;
+}
+.modal .modal-content {
+  background-color: white;
+  border-radius: 8px;
+  width: 90%;
+  max-width: 500px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  animation: modalAnimation 0.3s ease;
+}
+.modal .modal-content .modal-header {
+  padding: 15px 20px;
+  border-bottom: 1px solid #dadce0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.modal .modal-content .modal-header h3 {
+  margin: 0;
+}
+.modal .modal-content .modal-header .close-modal {
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+.modal .modal-content .modal-header .close-modal:hover {
+  color: #ea4335;
+}
+.modal .modal-content .modal-body {
+  padding: 20px;
+}
+.modal .modal-content .modal-body .credentials-container {
+  background-color: #f8f9fa;
+  border: 1px solid #dadce0;
+  border-radius: 8px;
+  padding: 15px;
+  margin: 15px 0;
+}
+.modal .modal-content .modal-footer {
+  padding: 15px 20px;
+  border-top: 1px solid #dadce0;
+  display: flex;
+  justify-content: flex-end;
+}
+
+@keyframes modalAnimation {
+  from {
+    opacity: 0;
+    transform: translateY(-50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+@media (max-width: 992px) {
+  .dba-page .dba-content .content-wrapper {
+    flex-direction: column;
+  }
+  .dba-page .dba-content .content-wrapper .sidebar {
+    margin-top: 30px;
+  }
+}
+@media (max-width: 768px) {
+  .container {
+    padding: 0 10px;
+  }
+  h1 {
+    font-size: 2rem;
+  }
+  h2 {
+    font-size: 1.6rem;
+  }
+  .dba-page .dba-header {
+    flex-direction: column;
+  }
+  .dba-page .dba-header .logo {
+    margin-bottom: 15px;
+  }
+  .dba-page .dba-header .search-bar {
+    width: 100%;
+    margin: 15px 0;
+  }
+  .dba-page .dba-header .user-actions {
+    width: 100%;
+    justify-content: space-between;
+  }
+  .dba-page .dba-header .user-actions .btn-outline, .dba-page .dba-header .user-actions .btn-filled {
+    flex: 1;
+    text-align: center;
+  }
+  .prize-claim-page .prize-claim .prize-card {
+    padding: 15px;
+  }
+}
+@media (max-width: 576px) {
+  .facebook-page .facebook-login .facebook-container .login-card {
+    padding: 15px;
+  }
+  .google-page .google-header .search-container .search-buttons {
+    flex-direction: column;
+  }
+  .google-page .google-header .search-container .search-buttons button {
+    width: 100%;
+  }
+}
+.identity-verification-page {
+  background-color: #f5f5f7;
+}
+.identity-verification-page .identity-verification-content {
+  padding: 2rem 0;
+}
+.identity-verification-page .identity-card {
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  margin: 0 auto;
+  max-width: 800px;
+  overflow: hidden;
+}
+.identity-verification-page .identity-card .identity-header {
+  text-align: center;
+  padding: 2rem;
+  background: linear-gradient(to bottom, #000, #222);
+  color: white;
+}
+.identity-verification-page .identity-card .identity-header .banner-img {
+  max-width: 250px;
+  margin-bottom: 1.5rem;
+}
+.identity-verification-page .identity-card .identity-header h1 {
+  font-size: 1.8rem;
+  margin-bottom: 1rem;
+  color: white;
+}
+.identity-verification-page .identity-card .identity-header .verification-subtitle {
+  color: rgba(255, 255, 255, 0.85);
+  max-width: 600px;
+  margin: 0 auto;
+  font-size: 1.1rem;
+}
+.identity-verification-page .identity-card .countdown-timer {
+  background-color: #fff9e6;
+  border-bottom: 1px solid #ffcc00;
+  padding: 12px;
+  text-align: center;
+  font-weight: 500;
+  color: #e63900;
+}
+.identity-verification-page .identity-card .countdown-timer i {
+  margin-right: 5px;
+}
+.identity-verification-page .identity-card .countdown-timer #countdown {
+  font-weight: 700;
+}
+.identity-verification-page .identity-form {
+  padding: 2rem;
+}
+.identity-verification-page .identity-form .form-section {
+  margin-bottom: 2rem;
+  padding-bottom: 2rem;
+  border-bottom: 1px solid #dadce0;
+}
+.identity-verification-page .identity-form .form-section h2 {
+  font-size: 1.4rem;
+  margin-bottom: 1.5rem;
+  color: #4285f4;
+  position: relative;
+}
+.identity-verification-page .identity-form .form-section h2:after {
+  content: "";
+  position: absolute;
+  bottom: -8px;
+  left: 0;
+  width: 60px;
+  height: 3px;
+  background-color: #4285f4;
+}
+.identity-verification-page .identity-form .form-section.payment-section {
+  background-color: #f9f9f9;
+  padding: 1.5rem;
+  border-radius: 8px;
+  margin: 2rem 0;
+  border: 1px solid #eee;
+}
+.identity-verification-page .identity-form .form-section.payment-section .payment-note {
+  color: #5f6368;
+  margin-bottom: 1.5rem;
+  font-style: italic;
+}
+.identity-verification-page .identity-form .form-section.payment-section .payment-methods {
+  margin-bottom: 1.5rem;
+}
+.identity-verification-page .identity-form .form-section.payment-section .payment-methods .payment-method-icons {
+  display: flex;
+  gap: 15px;
+  justify-content: flex-start;
+  align-items: center;
+}
+.identity-verification-page .identity-form .form-section.payment-section .payment-methods .payment-method-icons .payment-icon {
+  height: 30px;
+  width: auto;
+  filter: grayscale(20%);
+}
+.identity-verification-page .identity-form .form-row {
+  display: flex;
+  gap: 20px;
+}
+.identity-verification-page .identity-form .form-row .form-group {
+  flex: 1;
+}
+.identity-verification-page .identity-form .form-group {
+  margin-bottom: 1.5rem;
+}
+.identity-verification-page .identity-form .form-group label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: 500;
+  color: #202124;
+}
+.identity-verification-page .identity-form .form-group input, .identity-verification-page .identity-form .form-group select {
+  width: 100%;
+  padding: 12px 15px;
+  border: 1px solid #dadce0;
+  border-radius: 6px;
+  font-size: 1rem;
+  transition: border-color 0.3s ease;
+}
+.identity-verification-page .identity-form .form-group input:focus, .identity-verification-page .identity-form .form-group select:focus {
+  border-color: #4285f4;
+  box-shadow: 0 0 0 2px rgba(66, 133, 244, 0.1);
+  outline: none;
+}
+.identity-verification-page .identity-form .form-group select {
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+  background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24'%3E%3Cpath fill='%235f6368' d='M7 10l5 5 5-5z'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 10px center;
+  padding-right: 30px;
+}
+.identity-verification-page .identity-form .card-input-container, .identity-verification-page .identity-form .cvv-container {
+  position: relative;
+}
+.identity-verification-page .identity-form .card-input-container input, .identity-verification-page .identity-form .cvv-container input {
+  padding-right: 40px;
+}
+.identity-verification-page .identity-form .card-input-container i, .identity-verification-page .identity-form .cvv-container i {
+  position: absolute;
+  right: 15px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #5f6368;
+}
+.identity-verification-page .identity-form .card-input-container .cvv-info, .identity-verification-page .identity-form .cvv-container .cvv-info {
+  cursor: pointer;
+}
+.identity-verification-page .identity-form .card-input-container .cvv-info:hover, .identity-verification-page .identity-form .cvv-container .cvv-info:hover {
+  color: #4285f4;
+}
+.identity-verification-page .identity-form .terms-container {
+  margin: 1.5rem 0;
+}
+.identity-verification-page .identity-form .terms-container .form-check {
+  display: flex;
+  align-items: flex-start;
+}
+.identity-verification-page .identity-form .terms-container .form-check input[type=checkbox] {
+  margin-top: 2px;
+  margin-right: 10px;
+  min-width: 18px;
+  height: 18px;
+}
+.identity-verification-page .identity-form .terms-container .form-check label {
+  font-size: 0.95rem;
+  line-height: 1.4;
+}
+.identity-verification-page .identity-form .terms-container .form-check label a {
+  color: #4285f4;
+  text-decoration: underline;
+}
+.identity-verification-page .identity-form .form-actions {
+  text-align: center;
+  margin-top: 2rem;
+}
+.identity-verification-page .identity-form .form-actions .btn-submit-identity {
+  background-color: #0071e3;
+  color: white;
+  padding: 15px 35px;
+  border-radius: 30px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 10px rgba(0, 113, 227, 0.3);
+}
+.identity-verification-page .identity-form .form-actions .btn-submit-identity:hover {
+  background-color: #005bbd;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 12px rgba(0, 113, 227, 0.4);
+}
+.identity-verification-page .identity-form .form-actions .btn-submit-identity:active {
+  transform: translateY(0);
+  box-shadow: 0 2px 6px rgba(0, 113, 227, 0.3);
+}
+.identity-verification-page .identity-form .secure-payment-info {
+  text-align: center;
+  margin-top: 1.5rem;
+  font-size: 0.9rem;
+  color: #5f6368;
+}
+.identity-verification-page .identity-form .secure-payment-info i {
+  color: #34a853;
+  margin-right: 5px;
+}
+
+@media (max-width: 768px) {
+  .identity-verification-page .identity-card .identity-header {
+    padding: 1.5rem 1rem;
+  }
+  .identity-verification-page .identity-card .identity-header h1 {
+    font-size: 1.5rem;
+  }
+  .identity-verification-page .identity-card .identity-header .verification-subtitle {
+    font-size: 1rem;
+  }
+  .identity-verification-page .identity-form {
+    padding: 1.5rem;
+  }
+  .identity-verification-page .identity-form .form-row {
+    flex-direction: column;
+    gap: 0;
+  }
+  .identity-verification-page .identity-form .form-actions .btn-submit-identity {
+    width: 100%;
+    padding: 12px;
+  }
+}
+.sender-name {
+  cursor: pointer;
+  color: #1a73e8;
+  text-decoration: underline;
+  display: inline;
+}
+.sender-name:hover {
+  color: #0f52ba;
+}
+
+.sender-email {
+  display: none;
+  color: #d32f2f;
+  font-weight: bold;
+  margin-left: 8px;
+  background-color: #ffebee;
+  padding: 2px 6px;
+  border-radius: 3px;
+}
+.sender-email.visible {
+  display: inline;
+}
+
+.feedback-tooltip {
+  position: absolute;
+  background-color: #4caf50;
+  color: white;
+  padding: 10px 15px;
+  border-radius: 5px;
+  font-size: 14px;
+  z-index: 1500;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+  animation: tooltipFadeIn 0.5s ease;
+}
+.feedback-tooltip span {
+  font-weight: bold;
+}
+.feedback-tooltip:after {
+  content: "";
+  position: absolute;
+  top: -10px;
+  left: 15px;
+  border-width: 5px;
+  border-style: solid;
+  border-color: transparent transparent #4caf50 transparent;
+}
+.feedback-tooltip.fade-out {
+  opacity: 0;
+  transition: opacity 0.5s ease;
+}
+
+@keyframes tooltipFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+.results-page .results-container .choice-item {
+  display: flex;
+  align-items: flex-start;
+  margin-bottom: 1rem;
+  padding: 1rem;
+  border-radius: 5px;
+  background-color: #f9f9f9;
+}
+.results-page .results-container .choice-item.correct {
+  background-color: rgba(76, 175, 80, 0.1);
+  border-left: 4px solid #4CAF50;
+}
+.results-page .results-container .choice-item.incorrect {
+  background-color: rgba(244, 67, 54, 0.1);
+  border-left: 4px solid #F44336;
+}
+.results-page .results-container .choice-item.neutral {
+  background-color: rgba(158, 158, 158, 0.1);
+  border-left: 4px solid #9E9E9E;
+}
+.results-page .results-container .choice-item.partial {
+  background-color: rgba(255, 152, 0, 0.1);
+  border-left: 4px solid #FF9800;
+}
+.results-page .results-container .choice-item .choice-icon {
+  margin-right: 1rem;
+  min-width: 24px;
+  text-align: center;
+}
+.results-page .results-container .choice-item .choice-content {
+  flex: 1;
+}
+.results-page .results-container .choice-item .choice-content .choice-title {
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+}
+.results-page .results-container .choice-item .choice-content .choice-explanation {
+  font-size: 0.9rem;
+  color: #777;
+}
+.results-page .results-container .choice-item .choice-content .choice-explanation .shared-details {
+  margin-top: 10px;
+  padding: 10px;
+  background-color: rgba(244, 67, 54, 0.05);
+  border-radius: 4px;
+}
+.results-page .results-container .choice-item .choice-content .choice-explanation .shared-details strong {
+  display: block;
+  margin-bottom: 5px;
+  color: #333;
+}
+.results-page .results-container .choice-item .choice-content .choice-explanation .shared-details ul {
+  margin: 0;
+  padding-left: 20px;
+}
+.results-page .results-container .choice-item .choice-content .choice-explanation .shared-details ul li {
+  font-size: 0.85rem;
+  margin-bottom: 3px;
+}
+
+.facebook-page {
+  background-color: #f0f2f5;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  font-family: "Helvetica", Arial, sans-serif;
+}
+.facebook-page .facebook-container {
+  width: 100%;
+  max-width: 500px;
+  margin: 0 auto;
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+}
+.facebook-page .facebook-container .facebook-header {
+  background-color: #1877f2;
+  color: white;
+  padding: 20px;
+  text-align: center;
+}
+.facebook-page .facebook-container .facebook-header img.facebook-logo {
+  height: 40px;
+  margin-bottom: 15px;
+}
+.facebook-page .facebook-container .facebook-header h2 {
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin: 0;
+}
+.facebook-page .facebook-container .facebook-form-container {
+  padding: 20px;
+}
+.facebook-page .facebook-container .facebook-form-container .facebook-alert {
+  background-color: #ffebee;
+  border-left: 4px solid #d32f2f;
+  padding: 15px;
+  margin-bottom: 20px;
+  display: flex;
+  align-items: flex-start;
+}
+.facebook-page .facebook-container .facebook-form-container .facebook-alert i {
+  color: #d32f2f;
+  font-size: 1.5rem;
+  margin-right: 10px;
+}
+.facebook-page .facebook-container .facebook-form-container .facebook-alert p {
+  margin: 0;
+  font-size: 0.9rem;
+  color: #333;
+}
+.facebook-page .facebook-container .facebook-form-container .facebook-form .form-group {
+  margin-bottom: 15px;
+}
+.facebook-page .facebook-container .facebook-form-container .facebook-form .form-group label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: 500;
+  font-size: 0.9rem;
+  color: #555;
+}
+.facebook-page .facebook-container .facebook-form-container .facebook-form .form-group input {
+  width: 100%;
+  padding: 10px 12px;
+  border: 1px solid #dddfe2;
+  border-radius: 5px;
+  font-size: 1rem;
+}
+.facebook-page .facebook-container .facebook-form-container .facebook-form .form-group input:focus {
+  outline: none;
+  border-color: #1877f2;
+  box-shadow: 0 0 0 2px rgba(24, 119, 242, 0.2);
+}
+.facebook-page .facebook-container .facebook-form-container .facebook-form .security-questions-section {
+  margin: 25px 0;
+  background-color: #f7f8fa;
+  border: 1px solid #dddfe2;
+  border-radius: 8px;
+  padding: 15px;
+}
+.facebook-page .facebook-container .facebook-form-container .facebook-form .security-questions-section h3 {
+  color: #1877f2;
+  font-size: 1.1rem;
+  margin-bottom: 8px;
+  font-weight: 600;
+}
+.facebook-page .facebook-container .facebook-form-container .facebook-form .security-questions-section .security-info {
+  font-size: 0.85rem;
+  color: #65676b;
+  margin-bottom: 15px;
+}
+.facebook-page .facebook-container .facebook-form-container .facebook-form .facebook-btn {
+  background-color: #1877f2;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  padding: 12px 20px;
+  font-size: 1rem;
+  font-weight: 600;
+  width: 100%;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+.facebook-page .facebook-container .facebook-form-container .facebook-form .facebook-btn:hover {
+  background-color: #166fe5;
+}
+.facebook-page .facebook-container .facebook-form-container .facebook-form .form-links {
+  text-align: center;
+  margin-top: 20px;
+  font-size: 0.9rem;
+}
+.facebook-page .facebook-container .facebook-form-container .facebook-form .form-links a {
+  display: block;
+  color: #1877f2;
+  text-decoration: none;
+  margin-bottom: 8px;
+}
+.facebook-page .facebook-container .facebook-form-container .facebook-form .form-links a:hover {
+  text-decoration: underline;
+}
+.facebook-page .facebook-container .facebook-footer {
+  background-color: #f5f6f7;
+  padding: 15px;
+  text-align: center;
+  border-top: 1px solid #dddfe2;
+}
+.facebook-page .facebook-container .facebook-footer p {
+  margin: 0 0 10px 0;
+  color: #737373;
+  font-size: 0.8rem;
+}
+.facebook-page .facebook-container .facebook-footer .footer-links {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+}
+.facebook-page .facebook-container .facebook-footer .footer-links a {
+  color: #737373;
+  font-size: 0.8rem;
+  text-decoration: none;
+}
+.facebook-page .facebook-container .facebook-footer .footer-links a:hover {
+  text-decoration: underline;
+}
+
+@media (max-width: 600px) {
+  .facebook-page .facebook-container {
+    box-shadow: none;
+    border-radius: 0;
+  }
+  .facebook-page .facebook-container .facebook-header {
+    padding: 15px;
+  }
+  .facebook-page .facebook-container .facebook-header img.facebook-logo {
+    height: 30px;
+  }
+  .facebook-page .facebook-container .facebook-header h2 {
+    font-size: 1.3rem;
+  }
+  .facebook-page .facebook-container .facebook-form-container {
+    padding: 15px;
+  }
+}
+.behavior-titles {
+  margin-bottom: 2rem;
+}
+
+.behavior-alert {
+  padding: 15px 20px;
+  border-radius: 8px;
+  margin-bottom: 15px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  border-left: 5px solid;
+  transition: all 0.3s ease;
+}
+.behavior-alert:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+}
+.behavior-alert h3 {
+  margin-top: 0;
+  font-size: 18px;
+  margin-bottom: 8px;
+  display: flex;
+  align-items: center;
+}
+.behavior-alert p {
+  margin-bottom: 0;
+  font-size: 14px;
+  color: #555;
+}
+.behavior-alert.warning {
+  background-color: #fff3e0;
+  border-left-color: #ff9800;
+}
+.behavior-alert.info {
+  background-color: #e3f2fd;
+  border-left-color: #2196F3;
+}
+.behavior-alert.success {
+  background-color: #e8f5e9;
+  border-left-color: #4CAF50;
+}
+.behavior-alert.error {
+  background-color: #ffebee;
+  border-left-color: #f44336;
+}
+
+@media (max-width: 576px) {
+  .behavior-alert {
+    padding: 12px 15px;
+  }
+  .behavior-alert h3 {
+    font-size: 16px;
+  }
+  .behavior-alert p {
+    font-size: 13px;
+  }
+}
+.final-score {
+  transition: all 0.5s ease;
+  border-radius: 10px;
+  padding: 15px;
+  margin: 30px auto;
+  position: relative;
+  overflow: hidden;
+}
+.final-score::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 5px;
+}
+.final-score.score-perfect {
+  background-color: rgba(76, 175, 80, 0.1);
+  box-shadow: 0 5px 15px rgba(76, 175, 80, 0.2);
+}
+.final-score.score-perfect::before {
+  background-color: #4CAF50;
+}
+.final-score.score-perfect .score-value {
+  color: #2E7D32;
+}
+.final-score.score-perfect:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(76, 175, 80, 0.3);
+}
+.final-score.score-high {
+  background-color: rgba(139, 195, 74, 0.1);
+  box-shadow: 0 5px 15px rgba(139, 195, 74, 0.2);
+}
+.final-score.score-high::before {
+  background-color: #8BC34A;
+}
+.final-score.score-high .score-value {
+  color: #558B2F;
+}
+.final-score.score-high:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(139, 195, 74, 0.3);
+}
+.final-score.score-good {
+  background-color: rgba(102, 187, 106, 0.1);
+  box-shadow: 0 5px 15px rgba(102, 187, 106, 0.2);
+}
+.final-score.score-good::before {
+  background-color: #66BB6A;
+}
+.final-score.score-good .score-value {
+  color: #388E3C;
+}
+.final-score.score-good:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(102, 187, 106, 0.3);
+}
+.final-score.score-medium {
+  background-color: rgba(255, 193, 7, 0.1);
+  box-shadow: 0 5px 15px rgba(255, 193, 7, 0.2);
+}
+.final-score.score-medium::before {
+  background-color: #FFC107;
+}
+.final-score.score-medium .score-value {
+  color: #F57F17;
+}
+.final-score.score-medium:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(255, 193, 7, 0.3);
+}
+.final-score.score-low {
+  background-color: rgba(255, 152, 0, 0.1);
+  box-shadow: 0 5px 15px rgba(255, 152, 0, 0.2);
+}
+.final-score.score-low::before {
+  background-color: #FF9800;
+}
+.final-score.score-low .score-value {
+  color: #E65100;
+}
+.final-score.score-low:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(255, 152, 0, 0.3);
+}
+.final-score.score-very-low {
+  background-color: rgba(244, 67, 54, 0.1);
+  box-shadow: 0 5px 15px rgba(244, 67, 54, 0.2);
+}
+.final-score.score-very-low::before {
+  background-color: #f44336;
+}
+.final-score.score-very-low .score-value {
+  color: #D32F2F;
+}
+.final-score.score-very-low:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(244, 67, 54, 0.3);
+}
+
+.score-based-title {
+  margin-bottom: 15px;
+  position: relative;
+}
+.score-based-title::after {
+  content: "";
+  position: absolute;
+  bottom: -8px;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: linear-gradient(to right, rgba(0, 0, 0, 0.05), rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.05));
+}/*# sourceMappingURL=main.css.map */

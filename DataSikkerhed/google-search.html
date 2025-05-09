@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="da">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Facebook login - Google Søgning</title>
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body class="scenario-page google-page">
+    <div class="container">
+        <div class="scenario-header">
+            <div class="progress-bar">
+                <div class="progress" style="width: 75%"></div>
+            </div>
+            <div class="scenario-info">
+                <span class="small-text">Scenario 3/3: Google Søgning</span>
+            </div>
+        </div>
+
+        <div class="url-bar">
+            <span class="secure-indicator secure"><i class="fas fa-lock"></i></span>
+            <span class="protocol">https://</span>
+            <span class="domain">google.com/search?q=facebook</span>
+            <div class="vpn-button" id="vpnToggle" title="Aktiver/deaktiver VPN">
+                <i class="fas fa-shield-alt"></i>
+                <span class="vpn-status">VPN</span>
+            </div>
+            <div class="browser-actions">
+                <div class="action-button minimize"></div>
+                <div class="action-button maximize"></div>
+                <div class="action-button close"></div>
+            </div>
+        </div>
+
+        <!-- Browser tabs -->
+        <div class="tabs-container">
+            <!-- Tabs will be dynamically added here by JavaScript -->
+        </div>
+
+        <header class="google-header">
+            <div class="google-logo">
+                <img src="assets/images/google-logo.png" alt="Google Logo">
+            </div>
+            <div class="search-container">
+                <input type="text" value="facebook login" class="search-input">
+                <div class="search-buttons">
+                    <button class="search-btn">Google-søgning</button>
+                    <button class="lucky-btn">Jeg føler mig heldig</button>
+                </div>
+            </div>
+        </header>
+
+        <main class="google-results">
+            <div class="search-stats">
+                <p>Ca. 8.590.000.000 resultater (0,54 sekunder)</p>
+            </div>
+            
+            <div class="results-list">
+                <!-- Sponsored result (fake Facebook) -->
+                <div class="result-item sponsored" id="fakeResult">
+                    <div class="ad-label">Annonce</div>
+                    <h3 class="result-title"><a href="facebook-fake.html">Log ind | Faceb0ok</a></h3>
+                    <div class="result-url">https://www.faceb0ok.com/login/</div>
+                    <p class="result-description">Log ind på Faceb0ok for at starte med at dele og kommunikere med dine venner, familie og personer, du kender.</p>
+                </div>
+                
+                <!-- Real Facebook result -->
+                <div class="result-item" id="realResult">
+                    <h3 class="result-title"><a href="facebook-real.html">Log ind | Facebook</a></h3>
+                    <div class="result-url">https://www.facebook.com/login/</div>
+                    <p class="result-description">Log ind på Facebook for at starte med at dele og kommunikere med dine venner, familie og personer, du kender.</p>
+                </div>
+                
+                <!-- Other results -->
+                <div class="result-item">
+                    <h3 class="result-title"><a href="#">Facebook - Log ind eller tilmeld dig</a></h3>
+                    <div class="result-url">https://www.facebook.com/</div>
+                    <p class="result-description">Opret en konto eller log ind på Facebook. Forbind med venner, familie og andre personer, du kender. Del billeder og videoer...</p>
+                </div>
+                
+                <div class="result-item">
+                    <h3 class="result-title"><a href="#">Facebook Login | Facebook</a></h3>
+                    <div class="result-url">https://www.facebook.com/help/login</div>
+                    <p class="result-description">Få hjælp til at logge ind på din Facebook-konto, hvis du har glemt din adgangskode, eller har problemer med at logge ind.</p>
+                </div>
+            </div>
+        </main>
+        
+        <div class="instructions-overlay">
+            <div class="instructions-card">
+                <h2>Opgave:</h2>
+                <p>Du skal nu logge ind på Facebook. Klik på det relevante søgeresultat.</p>
+                <button class="btn btn-primary" id="closeInstructions">OK, jeg forstår</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/scenarios.js"></script>
+    <script src="js/tabs.js"></script>
+    <script>
+        // Direkte flag til at markere, at brugeren har besøgt Google search siden
+        localStorage.setItem('hasVisitedGoogleSearch', 'true');
+    </script>
+</body>
+</html>

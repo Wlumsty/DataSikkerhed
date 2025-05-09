@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="da">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DBA - Danmarks største handelsportal</title>
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body class="scenario-page dba-page">
+    <div class="container">
+        <div class="scenario-header">
+            <div class="progress-bar">
+                <div class="progress" style="width: 50%"></div>
+            </div>
+            <div class="scenario-info">
+                <span class="small-text">Scenario 2/3: Handelsportal</span>
+            </div>
+        </div>
+
+        <div class="url-bar">
+            <span class="secure-indicator secure"><i class="fas fa-lock"></i></span>
+            <span class="protocol">https://</span>
+            <span class="domain">dba.dk</span>
+            <div class="vpn-button" id="vpnToggle" title="Aktiver/deaktiver VPN">
+                <i class="fas fa-shield-alt"></i>
+                <span class="vpn-status">VPN</span>
+            </div>
+            <div class="browser-actions">
+                <div class="action-button minimize"></div>
+                <div class="action-button maximize"></div>
+                <div class="action-button close"></div>
+            </div>
+        </div>
+
+        <!-- Browser tabs -->
+        <div class="tabs-container">
+            <!-- Tabs will be dynamically added here by JavaScript -->
+        </div>
+
+        <header class="dba-header">
+            <div class="logo">
+                <img src="assets/images/dba-logo.png" alt="DBA Logo" class="dba-logo">
+            </div>
+            <div class="search-bar">
+                <input type="text" placeholder="Søg blandt alle annoncer på DBA">
+                <button class="search-btn">Søg</button>
+            </div>
+            <div class="user-actions">
+                <a href="#" class="btn-icon btn-profile" title="Log ind">
+                    <i class="fas fa-user-circle"></i>
+                </a>
+                <a href="#" class="btn-icon btn-create" title="Opret annonce">
+                    <i class="fas fa-plus-circle"></i>
+                </a>
+            </div>
+        </header>
+
+        <main class="dba-content">
+            <div class="content-wrapper">
+                <section class="product-listings">
+                    <h2>Seneste annoncer</h2>
+                    <div class="listing-grid">
+                        <!-- Products would go here in a real site -->
+                        <div class="product-card">
+                            <img src="assets/images/product1.png" alt="Produkt" class="product-img">
+                            <div class="product-info">
+                                <h3>Brugt iPhone 13</h3>
+                                <p class="price">4.200 kr.</p>
+                            </div>
+                        </div>
+                        <div class="product-card">
+                            <img src="assets/images/product2.png" alt="Produkt" class="product-img">
+                            <div class="product-info">
+                                <h3>Sony PlayStation 5</h3>
+                                <p class="price">3.800 kr.</p>
+                            </div>
+                        </div>
+                        <!-- More product cards would go here -->
+                    </div>
+                </section>
+                
+                <aside class="sidebar">
+                    <div class="ad-container">
+                        <div class="scam-ad" id="scamAd">
+                            <h3>TILLYKKE!</h3>
+                            <h4>Du har vundet en GRATIS <br>iPhone 16 Pro!</h4>
+                            <img src="assets/images/iphone16.png" alt="iPhone 16 Pro" class="prize-img">
+                            <p>Du er blevet udvalgt blandt vores brugere til at modtage en spritny iPhone 16 Pro!</p>
+                            <button class="claim-btn">Klik her for at modtage din præmie</button>
+                            <div class="ad-footer">
+                                <span class="ad-report" id="reportAd">Anmeld som spam</span>
+                            </div>
+                        </div>
+                    </div>
+                </aside>
+            </div>
+        </main>
+    </div>
+
+    <script src="js/scenarios.js"></script>
+    <script src="js/tabs.js"></script>
+</body>
+</html>

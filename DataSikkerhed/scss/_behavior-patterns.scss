@@ -1,0 +1,213 @@
+// Adfærdsmønster Styles
+// Disse styles bruges til at vise adfærdsmønster-baserede advarsler og titler på resultatsiden
+
+.behavior-titles {
+  margin-bottom: 2rem;
+}
+
+.behavior-alert {
+  padding: 15px 20px;
+  border-radius: 8px;
+  margin-bottom: 15px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  border-left: 5px solid;
+  transition: all 0.3s ease;
+  
+  &:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+  }
+  
+  h3 {
+    margin-top: 0;
+    font-size: 18px;
+    margin-bottom: 8px;
+    display: flex;
+    align-items: center;
+  }
+  
+  p {
+    margin-bottom: 0;
+    font-size: 14px;
+    color: #555;
+  }
+  
+  // Forskellige typer advarsler
+  &.warning {
+    background-color: #fff3e0;
+    border-left-color: #ff9800;
+  }
+  
+  &.info {
+    background-color: #e3f2fd;
+    border-left-color: #2196F3;
+  }
+  
+  &.success {
+    background-color: #e8f5e9;
+    border-left-color: #4CAF50;
+  }
+  
+  &.error {
+    background-color: #ffebee;
+    border-left-color: #f44336;
+  }
+}
+
+// Responsive styling
+@media (max-width: 576px) {
+  .behavior-alert {
+    padding: 12px 15px;
+    
+    h3 {
+      font-size: 16px;
+    }
+    
+    p {
+      font-size: 13px;
+    }
+  }
+}
+
+// Score styling - visuelt feedback baseret på sikkerhedsscore
+.final-score {
+  transition: all 0.5s ease;
+  border-radius: 10px;
+  padding: 15px;
+  margin: 30px auto;
+  position: relative;
+  overflow: hidden;
+  
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 5px;
+  }
+  
+  &.score-perfect {
+    background-color: rgba(#4CAF50, 0.1);
+    box-shadow: 0 5px 15px rgba(#4CAF50, 0.2);
+    
+    &::before {
+      background-color: #4CAF50;
+    }
+    
+    .score-value {
+      color: #2E7D32;
+    }
+    
+    &:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 8px 20px rgba(#4CAF50, 0.3);
+    }
+  }
+  
+  &.score-high {
+    background-color: rgba(#8BC34A, 0.1);
+    box-shadow: 0 5px 15px rgba(#8BC34A, 0.2);
+    
+    &::before {
+      background-color: #8BC34A;
+    }
+    
+    .score-value {
+      color: #558B2F;
+    }
+    
+    &:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 8px 20px rgba(#8BC34A, 0.3);
+    }
+  }
+  
+  &.score-good {
+    background-color: rgba(#66BB6A, 0.1);
+    box-shadow: 0 5px 15px rgba(#66BB6A, 0.2);
+    
+    &::before {
+      background-color: #66BB6A;
+    }
+    
+    .score-value {
+      color: #388E3C;
+    }
+    
+    &:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 8px 20px rgba(#66BB6A, 0.3);
+    }
+  }
+  
+  &.score-medium {
+    background-color: rgba(#FFC107, 0.1);
+    box-shadow: 0 5px 15px rgba(#FFC107, 0.2);
+    
+    &::before {
+      background-color: #FFC107;
+    }
+    
+    .score-value {
+      color: #F57F17;
+    }
+    
+    &:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 8px 20px rgba(#FFC107, 0.3);
+    }
+  }
+  
+  &.score-low {
+    background-color: rgba(#FF9800, 0.1);
+    box-shadow: 0 5px 15px rgba(#FF9800, 0.2);
+    
+    &::before {
+      background-color: #FF9800;
+    }
+    
+    .score-value {
+      color: #E65100;
+    }
+    
+    &:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 8px 20px rgba(#FF9800, 0.3);
+    }
+  }
+  
+  &.score-very-low {
+    background-color: rgba(#f44336, 0.1);
+    box-shadow: 0 5px 15px rgba(#f44336, 0.2);
+    
+    &::before {
+      background-color: #f44336;
+    }
+    
+    .score-value {
+      color: #D32F2F;
+    }
+    
+    &:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 8px 20px rgba(#f44336, 0.3);
+    }
+  }
+}
+
+// Style til score-baseret titel
+.score-based-title {
+  margin-bottom: 15px;
+  position: relative;
+  
+  &::after {
+    content: '';
+    position: absolute;
+    bottom: -8px;
+    left: 0;
+    right: 0;
+    height: 2px;
+    background: linear-gradient(to right, rgba(0,0,0,0.05), rgba(0,0,0,0.1), rgba(0,0,0,0.05));
+  }
+}

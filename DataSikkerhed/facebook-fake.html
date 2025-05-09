@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="da">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Log ind | Faceb0ok</title>
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body class="scenario-page facebook-page fake-facebook">
+    <div class="container">
+        <div class="scenario-header">
+            <div class="progress-bar">
+                <div class="progress" style="width: 75%"></div>
+            </div>
+            <div class="scenario-info">
+                <span class="small-text">Scenario 3/3: Facebook Login</span>
+            </div>
+        </div>
+
+        <div class="url-bar">
+            <span class="secure-indicator not-secure"><i class="fas fa-lock-open"></i></span>
+            <span class="protocol">http://</span>
+            <span class="domain">faceb0ok.com/login</span>
+            <div class="vpn-button" id="vpnToggle" title="Aktiver/deaktiver VPN">
+                <i class="fas fa-shield-alt"></i>
+                <span class="vpn-status">VPN</span>
+            </div>
+            <div class="browser-actions">
+                <div class="action-button minimize"></div>
+                <div class="action-button maximize"></div>
+                <div class="action-button close"></div>
+            </div>
+        </div>
+
+        <!-- Browser tabs -->
+        <div class="tabs-container">
+            <!-- Tabs will be dynamically added here by JavaScript -->
+        </div>
+
+        <main>
+            <section class="facebook-login">
+                <div class="facebook-container">
+                    <div class="facebook-logo">
+                        <img src="assets/images/facebook-logo.png" alt="Facebook Logo">
+                    </div>
+                    
+                    <div class="login-card">
+                        <h2>Log ind på Faceb0ok</h2>
+                        <form id="facebookLoginForm">
+                            <div class="form-group">
+                                <input type="text" id="fbEmail" name="fbEmail" placeholder="E-mail eller telefonnummer" required>
+                            </div>
+                            <div class="form-group">
+                                <input type="password" id="fbPassword" name="fbPassword" placeholder="Adgangskode" required>
+                            </div>
+                            <button type="submit" class="btn btn-fb-login">Log ind</button>
+                            <div class="forgotten-password">
+                                <a href="#">Glemt adgangskode?</a>
+                            </div>
+                            <div class="divider">
+                                <span>eller</span>
+                            </div>
+                            <div class="create-new">
+                                <button type="button" class="btn btn-create-account">Opret ny konto</button>
+                            </div>
+                        </form>
+                    </div>
+                    
+                    <div class="facebook-footer">
+                        <p class="subtle-different">
+                            <small>Bemærk den lidt anderledes URL og stavemåde af "Faceb0ok" (med et nul i stedet for o)</small>
+                        </p>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <script src="js/scenarios.js"></script>
+    <script src="js/tabs.js"></script>
+</body>
+</html>

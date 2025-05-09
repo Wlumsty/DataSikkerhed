@@ -1,0 +1,21 @@
+{
+  "name": "datasikkerhed-project",
+  "version": "1.0.0",
+  "description": "Interactive web experience about data security through branching scenarios",
+  "main": "index.html",
+  "scripts": {
+    "sass": "sass scss/main.scss css/main.css",
+    "sass:watch": "sass --watch scss/main.scss css/main.css"
+  },
+  "keywords": [
+    "data-security",
+    "interactive",
+    "education",
+    "branching-scenarios"
+  ],
+  "author": "MMD Semester 2 Student",
+  "license": "ISC",
+  "devDependencies": {
+    "sass": "^1.62.0"
+  }
+}

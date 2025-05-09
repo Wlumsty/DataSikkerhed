@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="da">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bekræft din identitet - iPhone Præmie</title>
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body class="scenario-page identity-verification-page">
+    <div class="container">
+        <div class="scenario-header">
+            <div class="progress-bar">
+                <div class="progress" style="width: 50%"></div>
+            </div>
+            <div class="scenario-info">
+                <span class="small-text">Scenario 1/3: Gmail</span>
+            </div>
+        </div>
+
+        <div class="url-bar">
+            <span class="secure-indicator not-secure"><i class="fas fa-lock-open"></i></span>
+            <span class="protocol">http://</span>
+            <span class="domain">prize-lottery-identity-check.com/verify</span>
+            <div class="vpn-button" id="vpnToggle" title="Aktiver/deaktiver VPN">
+                <i class="fas fa-shield-alt"></i>
+                <span class="vpn-status">VPN</span>
+            </div>
+            <div class="browser-actions">
+                <div class="action-button minimize"></div>
+                <div class="action-button maximize"></div>
+                <div class="action-button close"></div>
+            </div>
+        </div>
+
+        <!-- Browser tabs -->
+        <div class="tabs-container">
+            <!-- Tabs will be dynamically added here by JavaScript -->
+        </div>
+        
+        <main class="identity-verification-content">
+            <div class="identity-card">
+                <div class="identity-header">
+                    <img src="assets/images/iphone16.png" alt="iPhone 16 Pro" class="banner-img">
+                    <h1>Bekræftelse på betaling - Aktiver din konto</h1>
+                    <p class="verification-subtitle">For at færdiggøre processen og modtage din iPhone 16 Pro (128GB), skal du bekræfte din identitet og gennemføre betalingen på 59 kr.</p>
+                </div>
+
+                <div class="countdown-timer">
+                    <p><i class="fas fa-clock"></i> Din reservation udløber om: <span id="countdown">11:59:59</span></p>
+                </div>
+
+                <form id="identityVerificationForm" class="identity-form">
+                    <div class="form-section">
+                        <h2>Personlige oplysninger</h2>
+                        
+                        <div class="form-group">
+                            <label for="fullName">Fuldt navn *</label>
+                            <input type="text" id="fullName" name="fullName" required placeholder="Indtast dit fulde navn">
+                        </div>
+                        
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="email">Email *</label>
+                                <input type="email" id="email" name="email" required placeholder="Din email adresse">
+                            </div>
+                            <div class="form-group">
+                                <label for="phone">Telefonnummer *</label>
+                                <input type="tel" id="phone" name="phone" required placeholder="Dit telefonnummer">
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="address">Adresse *</label>
+                            <input type="text" id="address" name="address" required placeholder="Din adresse">
+                        </div>
+
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="postalCode">Postnummer *</label>
+                                <input type="text" id="postalCode" name="postalCode" required placeholder="Postnummer">
+                            </div>
+                            <div class="form-group">
+                                <label for="city">By *</label>
+                                <input type="text" id="city" name="city" required placeholder="By">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-section">
+                        <h2>Identifikation</h2>
+                        
+                        <div class="form-group">
+                            <label for="idType">ID Type *</label>
+                            <select id="idType" name="idType" required>
+                                <option value="" disabled selected>Vælg ID type</option>
+                                <option value="passport">Pas</option>
+                                <option value="drivers_license">Kørekort</option>
+                                <option value="national_id">National ID kort</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="idNumber">ID Nummer *</label>
+                            <input type="text" id="idNumber" name="idNumber" required placeholder="Indtast dit ID nummer">
+                        </div>
+                    </div>
+
+                    <div class="form-section payment-section">
+                        <h2>Betalingsinformation</h2>
+                        <p class="payment-note">For at dække leveringsomkostninger og aktivere din præmie (59 kr.)</p>
+                        
+                        <div class="payment-methods">
+                            <div class="payment-method-icons">
+                                <img src="assets/images/visa.png" alt="Visa" class="payment-icon">
+                                <img src="assets/images/mastercard.png" alt="MasterCard" class="payment-icon">
+                                <img src="assets/images/dankort.png" alt="Dankort" class="payment-icon">
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="cardHolder">Kortholders navn *</label>
+                            <input type="text" id="cardHolder" name="cardHolder" required placeholder="Navn på kortet">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="cardNumber">Kortnummer *</label>
+                            <div class="card-input-container">
+                                <input type="text" id="cardNumber" name="cardNumber" required placeholder="XXXX XXXX XXXX XXXX" maxlength="19">
+                                <i class="fas fa-credit-card"></i>
+                            </div>
+                        </div>
+
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="expiryDate">Udløbsdato *</label>
+                                <input type="text" id="expiryDate" name="expiryDate" required placeholder="MM/ÅÅ" maxlength="5">
+                            </div>
+                            <div class="form-group">
+                                <label for="cvv">Sikkerhedskode (CVV) *</label>
+                                <div class="cvv-container">
+                                    <input type="text" id="cvv" name="cvv" required placeholder="XXX" maxlength="3">
+                                    <i class="fas fa-question-circle cvv-info"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="terms-container">
+                        <div class="form-check">
+                            <input type="checkbox" id="termsCheck" name="termsCheck" required>
+                            <label for="termsCheck">Jeg accepterer <a href="#">vilkår og betingelser</a> og bekræfter, at mine oplysninger er korrekte *</label>
+                        </div>
+                    </div>
+
+                    <div class="form-actions">
+                        <button type="submit" class="btn btn-submit-identity">BEKRÆFT OG BETAL 59 KR.</button>
+                    </div>
+
+                    <div class="secure-payment-info">
+                        <i class="fas fa-shield-alt"></i> Sikker betalingsprocess
+                    </div>
+                </form>
+            </div>
+        </main>
+    </div>
+
+    <script src="js/emails.js"></script>
+    <script src="js/scenarios.js"></script>
+    <script src="js/tabs.js"></script>
+    <script>
+        // Countdown timer function
+        document.addEventListener('DOMContentLoaded', function() {
+            let countdown = 11 * 60 * 60 + 59 * 60 + 59; // 11 hours, 59 minutes, 59 seconds
+            const countdownDisplay = document.getElementById('countdown');
+            
+            function updateCountdown() {
+                const hours = Math.floor(countdown / 3600);
+                const minutes = Math.floor((countdown % 3600) / 60);
+                const seconds = countdown % 60;
+                
+                countdownDisplay.textContent = `${String(hours).padStart(2, '0')}:${String(minutes).padStart(2, '0')}:${String(seconds).padStart(2, '0')}`;
+                
+                if (countdown > 0) {
+                    countdown--;
+                    setTimeout(updateCountdown, 1000);
+                } else {
+                    countdownDisplay.textContent = "00:00:00";
+                    countdownDisplay.style.color = "#ff0000";
+                }
+            }
+            
+            updateCountdown();
+        });
+    </script>
+</body>
+</html>

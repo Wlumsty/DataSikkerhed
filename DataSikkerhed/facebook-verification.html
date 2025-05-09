@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="da">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Facebook Kontobekræftelse</title>
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+</head>
+<body class="facebook-page scenario-page">
+    <div class="container">
+        <div class="scenario-header">
+            <div class="progress-bar">
+                <div class="progress" style="width: 50%"></div>
+            </div>
+            <div class="scenario-info">
+                <span class="small-text">Scenario 2/3: Facebook</span>
+            </div>
+        </div>
+
+        <div class="url-bar">
+            <span class="secure-indicator not-secure"><i class="fas fa-lock-open"></i></span>
+            <span class="protocol">http://</span>
+            <span class="domain">faceb0ok.com/verify</span>
+            <div class="vpn-button" id="vpnToggle" title="Aktiver/deaktiver VPN">
+                <i class="fas fa-shield-alt"></i>
+                <span class="vpn-status">VPN</span>
+            </div>
+            <div class="browser-actions">
+                <div class="action-button minimize"></div>
+                <div class="action-button maximize"></div>
+                <div class="action-button close"></div>
+            </div>
+        </div>
+    <div class="facebook-container">
+        <div class="facebook-header">
+            <img src="./assets/facebook-logo.png" alt="Facebook" class="facebook-logo">
+            <h2>Bekræft din identitet</h2>
+        </div>
+        
+        <div class="facebook-form-container">
+            <div class="facebook-alert">
+                <i class="fas fa-exclamation-triangle"></i>
+                <p>Din konto er blevet midlertidigt begrænset på grund af mistænkelig aktivitet. For at genaktivere din konto, skal du bekræfte dine oplysninger nedenfor.</p>
+            </div>
+            
+            <form id="facebookVerificationForm" class="facebook-form">
+                <div class="form-group">
+                    <label for="email">E-mail eller telefonnummer:</label>
+                    <input type="text" id="email" name="email" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="password">Adgangskode:</label>
+                    <input type="password" id="password" name="password" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="phone">Bekræft telefonnummer:</label>
+                    <input type="text" id="phone" name="phone" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="dateOfBirth">Fødselsdato:</label>
+                    <input type="date" id="dateOfBirth" name="dateOfBirth" required>
+                </div>
+                
+                <div class="security-questions-section">
+                    <h3>Sikkerhedsspørgsmål</h3>
+                    <p class="security-info">For at bekræfte din identitet, skal du besvare disse sikkerhedsspørgsmål:</p>
+                    
+                    <div class="form-group">
+                        <label for="securityQuestion1">Hvad hed din første hund?</label>
+                        <input type="text" id="securityQuestion1" name="securityQuestion1" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="securityQuestion2">Hvilken by blev du født i?</label>
+                        <input type="text" id="securityQuestion2" name="securityQuestion2" required>
+                    </div>
+                </div>
+                
+                <div class="form-group">
+                    <button type="submit" class="facebook-btn">Bekræft min identitet</button>
+                </div>
+                
+                <div class="form-links">
+                    <a href="#">Har du glemt din adgangskode?</a>
+                    <a href="#">Brug ikke min konto længere</a>
+                </div>
+            </form>
+        </div>
+        
+        <div class="facebook-footer">
+            <p>Facebook © 2025</p>
+            <div class="footer-links">
+                <a href="#">Privatlivspolitik</a>
+                <a href="#">Vilkår</a>
+                <a href="#">Hjælp</a>
+            </div>
+        </div>
+    </div>
+    
+    <script src="./js/scenarios.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Handle form submission
+            const facebookVerificationForm = document.getElementById('facebookVerificationForm');
+            const passwordInput = document.getElementById('password');
+            const emailInput = document.getElementById('email');
+            
+            // Pre-fill email if user has login information stored
+            if (emailInput) {
+                const userChoices = JSON.parse(localStorage.getItem('userChoices')) || {};
+                if (userChoices.login && userChoices.login.email) {
+                    emailInput.value = userChoices.login.email;
+                }
+            }
+            
+            if (facebookVerificationForm) {
+                facebookVerificationForm.addEventListener('submit', function(e) {
+                    e.preventDefault();
+                    
+                    // Get password entered by the user
+                    const enteredPassword = passwordInput.value;
+                    
+                    // Get user choices from localStorage
+                    let userChoices = JSON.parse(localStorage.getItem('userChoices')) || {};
+                    if (!userChoices.scenarios) {
+                        userChoices.scenarios = {};
+                    }
+                    if (!userChoices.scenarios.facebookScenario) {
+                        userChoices.scenarios.facebookScenario = {};
+                    }
+                    
+                    // Check if the entered password matches the user's "real" password (if set)
+                    const usedRealPassword = userChoices.login && 
+                                           userChoices.login.password && 
+                                           enteredPassword === userChoices.login.password;
+                    
+                    // Update user choices to track whether they used their real password 
+                    userChoices.scenarios.facebookScenario.usedRealPassword = usedRealPassword;
+                    
+                    // Track that the user fell for the fake Facebook security phishing attempt
+                    userChoices.scenarios.facebookScenario.fellForFakeFacebookSecurityPhishing = true;
+                    
+                    // Add Facebook security email flag to show it in inbox
+                    userChoices.showFacebookSecurityEmail = true;
+                    
+                    // Subtract points for falling for a phishing attempt
+                    userChoices.score = userChoices.score || 0;
+                    userChoices.score -= 2;
+                    
+                    // Save updated user choices to localStorage
+                    localStorage.setItem('userChoices', JSON.stringify(userChoices));
+                    
+                    // Redirect to the Gmail inbox
+                    window.location.href = 'gmail-inbox.html';
+                });
+            }
+        });
+    </script>
+</body>
+</html>
